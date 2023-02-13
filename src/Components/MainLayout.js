@@ -1,4 +1,4 @@
-import { Layout, Menu, theme } from "antd";
+import { Dropdown, Layout, Menu, theme } from "antd";
 import React, { useState } from "react";
 
 import {
@@ -16,18 +16,22 @@ import {
 } from "react-icons/ai";
 import { FaUserAlt, FaUserMd, FaUserPlus } from "react-icons/fa";
 import { Outlet, useNavigate } from "react-router-dom";
-const { Header, Sider, Content,Footer } = Layout;
+import UserNav from "./HeaderCompo/UserNav";
+const { Header, Sider, Content, Footer } = Layout;
 const MainLayout = () => {
   const [collapsed, setCollapsed] = useState(false);
   const nevigate = useNavigate();
+
   // console.log(collapsed)
   return (
     <Layout>
-      <Sider trigger={null} breakpoint="md" collapsed={collapsed}
-      onBreakpoint={(broken) => {
-        setCollapsed(broken)
-      }}
-      
+      <Sider
+        trigger={null}
+        breakpoint="md"
+        collapsed={collapsed}
+        onBreakpoint={(broken) => {
+          setCollapsed(broken);
+        }}
       >
         <div className="logo" />
         <Menu
@@ -89,13 +93,18 @@ const MainLayout = () => {
             padding: 0,
           }}
         >
-          {React.createElement(
-            collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
-            {
-              className: "trigger",
-              onClick: () => setCollapsed(!collapsed),
-            }
-          )}
+          <div className="d-flex justify-content-between">
+            {React.createElement(
+              collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
+              {
+                className: "trigger",
+                onClick: () => setCollapsed(!collapsed),
+              }
+            )}
+            <div>
+              <UserNav />
+            </div>
+          </div>
         </Header>
         <Content
           style={{
@@ -106,7 +115,9 @@ const MainLayout = () => {
         >
           <Outlet />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Autonomy ©{new Date().getFullYear()}</Footer>
+        <Footer style={{ textAlign: "center" }}>
+          Autonomy ©{new Date().getFullYear()}
+        </Footer>
       </Layout>
     </Layout>
   );
