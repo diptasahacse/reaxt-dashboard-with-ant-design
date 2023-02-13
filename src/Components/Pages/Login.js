@@ -9,12 +9,12 @@ const Login = () => {
           <h3 className="text-center">Login</h3>
           <form>
             <div>
-              <label for="inputEmail4" className="form-label">
+              <label htmlFor="inputEmail4" className="form-label">
                 Email
               </label>
               <input type="email"  placeholder="Email"  className="form-control" id="inputEmail4" />
 
-              <label for="inputPassword4" className="form-label">
+              <label htmlFor="inputPassword4" className="form-label">
                 Password
               </label>
               <input type="password" placeholder="Password" className="form-control" id="inputPassword4" />
