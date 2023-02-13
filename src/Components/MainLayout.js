@@ -23,7 +23,7 @@ const MainLayout = () => {
   // console.log(collapsed)
   return (
     <Layout>
-      <Sider trigger={null} breakpoint="lg" collapsed={collapsed}
+      <Sider trigger={null} breakpoint="md" collapsed={collapsed}
       onBreakpoint={(broken) => {
         setCollapsed(broken)
       }}
@@ -106,7 +106,7 @@ const MainLayout = () => {
         >
           <Outlet />
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2023 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>Autonomy ©{new Date().getFullYear()}</Footer>
       </Layout>
     </Layout>
   );
