@@ -13,6 +13,8 @@ import {
   AiFillPlusSquare,
   AiFillAppstore,
   AiFillEdit,
+  AiOutlineInsertRowAbove,
+  AiOutlineNodeCollapse
 } from "react-icons/ai";
 import { FaUserAlt, FaUserMd, FaUserPlus } from "react-icons/fa";
 import { Outlet, useNavigate } from "react-router-dom";
@@ -83,6 +85,18 @@ const MainLayout = () => {
                   label: "Manage User",
                 },
               ],
+            },
+            {
+              key: "table",
+              icon: <AiOutlineInsertRowAbove />,
+              label: "Table",
+              
+            },
+            {
+              key: "form",
+              icon: <AiOutlineNodeCollapse />,
+              label: "Form",
+              
             },
           ]}
         />
